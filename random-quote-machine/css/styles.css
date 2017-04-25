@@ -8,3 +8,20 @@ body {
   color: #414141;    /* Dark gray */
   background-color: #008F3F;
 }
+
+.header-container {
+  display: flex;
+  color: #fff;
+  background-color: #5995DA;  /* Blue */
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
