@@ -4,24 +4,37 @@
   box-sizing: border-box;
 }
 
-body {
-  color: #414141;    /* Dark gray */
+html, body {
+  height: 100%;
+  color: white;
   background-color: #008F3F;
 }
 
-.header-container {
+.page {
+  min-height: 100%;
   display: flex;
-  color: #fff;
-  background-color: #5995DA;  /* Blue */
-  padding: 10px;
+  flex-direction: column;
 }
 
 .header {
   display: flex;
+  color: #fff;
+  padding: 10px;
+
+  background-color: blue;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.content {
+  background-color: green;
+  flex: 1;
+}
+
+.footer { 
+  background-color: black;
 }
