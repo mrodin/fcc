@@ -6,8 +6,9 @@
 
 html, body {
   height: 100%;
-  color: white;
+  color: #000;
   background-color: #008F3F;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .page {
@@ -18,10 +19,7 @@ html, body {
 
 .header {
   display: flex;
-  color: #fff;
-  padding: 10px;
-
-  background-color: blue;
+  padding: 10px 20px 10px 20px;
 }
 
 .logo {
@@ -30,11 +28,29 @@ html, body {
   align-items: center;
 }
 
-.content {
-  background-color: green;
-  flex: 1;
+.logo p {
+  margin-top: 5px;
+  font-weight: bold;
+  letter-spacing: 7px;
 }
 
-.footer { 
-  background-color: black;
+.content {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-box {
+  display: flex;
+  height: 300px;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.footer {
+  display: flex;
+  padding: 10px 20px 10px 20px;
+  justify-content: flex-end;
 }
