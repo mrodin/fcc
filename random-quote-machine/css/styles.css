@@ -11,6 +11,15 @@ html, body {
   font-family: 'Open Sans', sans-serif;
 }
 
+button {
+  background-color: #008F3F;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  font-size: 0.9em;
+  border-radius: 3px;
+}
+
 .page {
   min-height: 100%;
   display: flex;
@@ -38,15 +47,39 @@ html, body {
   display: flex;
   flex: 1;
   justify-content: center;
-  align-items: center;
+  padding-top: 50px;
 }
 
 .quote-box {
   display: flex;
-  height: 300px;
+  flex-direction: column;
+  margin-bottom: auto;
+  min-height: 200px;
   width: 600px;
+  padding: 50px 70px;
   background-color: #fff;
   border-radius: 5px;
+}
+
+.quote-text {
+  font-size: 1.5em;
+}
+
+.fa-quote-left {
+  margin-right: 10px;
+}
+
+.author {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
 .footer {
