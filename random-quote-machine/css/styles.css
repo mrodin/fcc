@@ -72,6 +72,8 @@ button {
 .author {
   display: flex;
   justify-content: flex-end;
+  padding-top: 20px;
+  padding-right: 10px;
   font-size: 1.1em;
   font-style: italic;
 }
