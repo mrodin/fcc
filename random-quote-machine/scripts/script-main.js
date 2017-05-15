@@ -28,7 +28,7 @@ function showRandomQuote() {
 
 function shareOnTwitter() {
     var quote = $(".quote-text").html();
-    var author = $(".author").html();
+    var author = $(".author").html().replace("- ", "-");
 
     return "https://twitter.com/intent/tweet?text=" + quote + " " + author;
 }
