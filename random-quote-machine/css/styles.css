@@ -11,6 +11,11 @@ html, body {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  background: url("../img/mb-background.jpg") no-repeat;
+  background-size: 100%;
+}
+
 button {
   background-color: #008F3F;
   border: none;
@@ -39,6 +44,9 @@ button {
 
 .logo p {
   margin-top: 5px;
+  font-family: 'Londrina Outline', cursive;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 7px;
 }
@@ -92,4 +100,9 @@ button {
   display: flex;
   padding: 10px 20px 10px 20px;
   justify-content: flex-end;
+}
+
+.footer p {
+  background-color: white;
+  font-size: 14px;
 }
