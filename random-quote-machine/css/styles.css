@@ -7,12 +7,11 @@
 html, body {
   height: 100%;
   color: #000;
-  background-color: #008F3F;
   font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  background: url("../img/mb-background.jpg") no-repeat;
+  background: url("../img/mb-background.jpg") no-repeat #008F3F;
   background-size: 100%;
 }
 
@@ -105,4 +104,8 @@ button {
 .footer p {
   background-color: white;
   font-size: 14px;
+}
+
+.color-change {
+  transition: color 2s, background-color 2s;
 }

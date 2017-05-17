@@ -1,8 +1,12 @@
+var colors = ["#993233", "#4dce00", "#9a33cc", "37afc0", "1060d3", "f66922", "e7536b", "008f3f"];
+
 $(document).ready(function () {
     showRandomQuote();
+    colorTransition();
 
     $("[name=\"new-quote\"]").click(function () {
         showRandomQuote();
+        colorTransition();
     });
 
     $("[name=\"twitter\"]").click(function () {
@@ -31,4 +35,12 @@ function shareOnTwitter() {
     var author = $(".author").html().replace("- ", "-");
 
     return "https://twitter.com/intent/tweet?text=" + quote + " " + author;
+}
+
+function colorTransition() {
+    var randColor = colors[Math.floor((Math.random() * colors.length))];
+    $("button").css("background-color", randColor);
+    $(".quote").css("color", randColor);
+    $(".author").css("color", randColor);
+    $(".fa-quote-left").css("color", randColor);
 }
