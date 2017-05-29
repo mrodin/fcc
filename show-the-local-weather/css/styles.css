@@ -7,3 +7,9 @@
 html, body {
     height: 100%;
 }
+
+body {
+    background-color: #226083;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+}
