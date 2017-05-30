@@ -13,3 +13,29 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
 }
+
+.page {
+    height: 100%; /* TODO: dela tohle vubec neco??? */
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 72px;
+    margin-top: 50px;
+}
+
+.square-background {
+    background-color: #FFF;
+    color: #226083;
+    float: left;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-right: 20px;
+}
