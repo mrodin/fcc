@@ -14,6 +14,10 @@ body {
     color: #FFF;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .page {
     height: 100%; /* TODO: dela tohle vubec neco??? */
     display: flex;
@@ -38,4 +42,25 @@ body {
     height: 100px;
     text-align: center;
     margin-right: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.location {
+    font-size: 36px;
+}
+
+.temperature {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 36px;
+}
+
+.unit {
+    font-size: 24px;
 }
