@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
     background-color: #226083;
     font-family: 'Open Sans', sans-serif;
@@ -19,7 +15,6 @@ body {
 }
 
 .page {
-    height: 100%; /* TODO: dela tohle vubec neco??? */
     display: flex;
     flex-direction: column;
 }
