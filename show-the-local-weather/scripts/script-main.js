@@ -12,9 +12,18 @@ function updateWeatherReport() {
         $.getJSON(OWMApiCall, function (data) {
             var tempInKelvin = data.main.temp;
             var weatherDescription = data.weather[0].main;
+            var unit = document.getElementById("unit");
 
             $(".tempvalue").html(convertKelvinToCelsius(tempInKelvin));
             $(".wi").addClass(convertWeatherToWiCss(weatherDescription));
+
+            unit.onclick = function () {
+                var currentUnit = unit.innerHTML;
+                
+                if (currentUnit === "C") {
+                    this.innerHTML = "F";
+                }
+            };
         });
     });
 };
