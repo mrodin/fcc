@@ -1,45 +1,44 @@
 function updateWeatherReport() {
     $.getJSON("http://ip-api.com/json/?callback=?", function (data) {
-        var city = data.city;
-        var country = data.country;
-        var lat = data.lat;
-        var lon = data.lon;
+        let city = data.city;
+        let country = data.country;
+        let lat = data.lat;
+        let lon = data.lon;
 
         // OpenWeatherMap API Call
-        var OWMApiCall = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=70a046fe2789d2e4e3bb919260264d96";
+        const OWMApiCall = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=70a046fe2789d2e4e3bb919260264d96";
 
         updateLocation(city, country);
         $.getJSON(OWMApiCall, function (data) {
-            var tempInKelvin = data.main.temp;
-            var weatherDescription = data.weather[0].main;
-            var unit = document.getElementById("unit");
-
-            $(".tempvalue").html(convertKelvinToCelsius(tempInKelvin));
+            let tempInKelvin = data.main.temp;
+            let weatherDescription = data.weather[0].main;
+            
+            document.getElementById("tempvalue").innerHTML = convertKelvinToCelsius(tempInKelvin);
             $(".wi").addClass(convertWeatherToWiCss(weatherDescription));
 
-            unit.onclick = function () {
-                var currentUnit = unit.innerHTML;
-                
-                if (currentUnit === "C") {
-                    this.innerHTML = "F";
-                }
+            document.getElementById("unit").onclick = function() {
+                switchTempUnit(tempInKelvin);
             };
         });
     });
 };
 
 function updateLocation(city, country) {
-    $(".city").html(city);
-    $(".country").html(country);
+    document.getElementById("city").innerHTML = city;
+    document.getElementById("country").innerHTML = country;
 };
 
 function convertKelvinToCelsius(temp) {
     return Math.round(temp - 273.15);
 };
 
+function convertKelvinToFahrenheit(temp) {
+    return Math.round(temp * 9 / 5 - 459.67);
+};
+
 // converts API weather description to Weather Icon CSS class
 function convertWeatherToWiCss(weather) {
-    var WiIcon = "";
+    let WiIcon = "";
     switch (weather) {
         case "Thunderstorm":
             WiIcon = "wi-day-thunderstorm";
@@ -70,6 +69,17 @@ function convertWeatherToWiCss(weather) {
     }
     return WiIcon;
 };
+
+function switchTempUnit(temp) {
+    let unit = document.getElementById("unit");
+    if (unit.innerHTML === "C") {
+        unit.innerHTML = "F";
+        document.getElementById("tempvalue").innerHTML = convertKelvinToFahrenheit(temp);
+    } else {
+        unit.innerHTML = "C";
+        document.getElementById("tempvalue").innerHTML = convertKelvinToCelsius(temp);
+    }
+}
 
 $(document).ready(function () {
     updateWeatherReport();
