@@ -1,21 +1,44 @@
-const searchBtn = document.getElementById("searchBtn");
-const searchResults = document.getElementById("searchResults");
-const url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=dog";
-// const url = "https://jsonblob.com/api/jsonBlob/d82d9345-34c0-11e7-ae4c-6beae9fe30f9";
+const WikiViewer = function() {
 
-let test = "";
+  let
+    searchBtn,
+    searchResults,
+    url,
+    testString
 
-document.addEventListener("DOMContentLoaded", function () {
+  const _init = function() {
+    searchBtn = document.getElementById("searchBtn");
+    searchResults = document.getElementById("searchResults");
+    url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=dog";
+    testString = "";
+
+    _getData();
+    _addEventHandlers();
+  }
+
+  const _addEventHandlers = function() {
+    searchBtn.addEventListener("click", _getData, false);
+    searchBtn.addEventListener("click", _testFunc, false);
+  }
+
+  const _testFunc = function() {
+    alert(testString);
+  }
+
+  const _getData = function() {
     fetch(url)
-        .then((resp) => resp.json())
-        .then(function (data) {
-            test = data.query.search[0].title;
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+      .then((resp) => resp.json())
+      .then(function(data) {
+        testString = data.query.search[1].title;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
 
-    searchBtn.onclick = function () {
-        alert(test);
-    }
-});
+  return {
+    init: _init
+  }
+}();
+
+WikiViewer.init();
