@@ -1,19 +1,31 @@
 const WikiViewer = function() {
 
-  let url;
+  let url,
+    search;
 
   const init = function() {
-    url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=dog";
+    url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=";
+    search = document.getElementById("search");
 
     addEventHandlers();
   }
 
   const addEventHandlers = function() {
-    document.getElementById("searchBtn").addEventListener("click", getData);
+    search.onkeydown = function(e) {
+      if (e.keyCode == 13) {
+        let searchQuery = search.value;
+        if (searchQuery != "") {
+          getData(searchQuery);
+        } else {
+          console.log("empty search field"); // TODO: log this on screen
+        }
+      }
+    }
   }
 
-  const getData = function() {
-    fetch(url)
+  const getData = function(searchQuery) {
+    let searchUrl = url + searchQuery;
+    fetch(searchUrl)
       .then((resp) => resp.json())
       .then((data) => {
         let output = "<h2>Search Results</h2>";
@@ -24,7 +36,7 @@ const WikiViewer = function() {
                   <li>Snippet: ${result.snippet}</li>
                 </ul>
               `;
-        });
+        })
         document.getElementById("output").innerHTML = output;
       })
   }
