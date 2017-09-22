@@ -7,13 +7,25 @@
   padding: 0;
   box-sizing: border-box;
   }
-  
+
+body {
+  color: #ffffff;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  font-family: 'Lobster', cursive;
+}
+
 .container {
   position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background: #343d46;
