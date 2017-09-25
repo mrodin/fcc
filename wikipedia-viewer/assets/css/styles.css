@@ -10,15 +10,17 @@
 
 body {
   color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
+  margin-top: 50px;
 }
 
-h2 {
-  font-family: 'Lobster', cursive;
-}
+/**
+* PAGE STYLES
+*/
 
 .container {
   position: absolute;
@@ -31,6 +33,16 @@ h2 {
   background: #343d46;
   }
 
+.fcc-logo {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+
+.random-article {
+  margin-top: 20px;
+}
+
 /**
 * SEARCH BAR
 */
@@ -38,6 +50,7 @@ h2 {
 .search-container {
   width: 300px;
   position: relative;
+  margin-top: 20px;
 }
 
 .search-container input#search {
@@ -67,7 +80,7 @@ h2 {
 .search-container .icon {
   position: absolute;
   margin-left: 17px;
-  margin-top: 17px;
+  margin-top: 13px;
   z-index: 1;
   color: #4f5b66;
 }
@@ -75,4 +88,18 @@ h2 {
 .search-container input#search:hover, .search-container input#search:focus, .search-container input#search:active{
   outline:none;
   background: #ffffff;
+}
+
+/**
+* OUTPUT
+*/
+
+.output {
+  display: flex;
+}
+
+.result {
+  background: #ffffff;
+  color: #2b303b;
+  flex: 1;
 }

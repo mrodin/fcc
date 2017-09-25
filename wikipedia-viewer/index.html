@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Wikipedia Viewer</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Lobster|Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Lobster|Playfair+Display" rel="stylesheet">
   <script src="https://use.fontawesome.com/4fc8455e92.js"></script>
   <link href="assets/css/styles.css" rel="stylesheet" type="text/css" />
 </head>
@@ -16,13 +16,18 @@
 
   <div class="container">
     <h1>Wikipedia Viewer</h1>
-    <h2>FreeCodeCamp</h2>
+    <p class="fcc-logo">FreeCodeCamp</p>
     <div class="search-container">
       <span class="icon"><i class="fa fa-search"></i></span>
       <input type="search" id="search" placeholder="Search..." autocomplete="off" />
-      <p>Click here for a random article</p>
     </div>
-    <div id="output"></div>
+    <p class="random-article">Click here for a random article</p>
+    <div id="output">
+      <div class="result">
+        <h2>Title</h2>
+        <p>Snippet</p>
+      </div>
+    </div>
   </div>
 
   <script src="assets/scripts/script-main.js"></script>
