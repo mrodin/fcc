@@ -4,7 +4,7 @@ const WikiViewer = function() {
     search;
 
   const init = function() {
-    url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=";
+    url = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&prop=extracts&exintro&explaintext&exsentences=1&gsrsearch=";
     search = document.getElementById("search");
 
     addEventHandlers();
@@ -28,16 +28,20 @@ const WikiViewer = function() {
     fetch(searchUrl)
       .then((resp) => resp.json())
       .then((data) => {
-        let output = "<h2>Search Results</h2>";
-        data.query.search.forEach(function(result) {
-          output += `
-                <ul class="list-group mb-3">
-                  <li>Title: ${result.title}</li>
-                  <li>Snippet: ${result.snippet}</li>
-                </ul>
+        let output = "";
+        let pages = data.query.pages;
+        for (let key in pages) {
+          if (pages.hasOwnProperty(key)) {
+            let val = pages[key];
+            output += `
+              <div class="result">
+                <h2>${val.title}</h2>
+                <p>${val.extract}</p>
+              </div>
               `;
-        })
-        document.getElementById("output").innerHTML = output;
+          }
+          document.getElementById("output").innerHTML = output;
+        }
       })
   }
 
@@ -47,73 +51,3 @@ const WikiViewer = function() {
 }();
 
 WikiViewer.init();
-
-// const WikiViewer = function() {
-
-//   let
-//     searchBtn,
-//     searchResults,
-//     url,
-//     ul,
-//     testString;
-
-//   const init = function() {
-//     searchBtn = document.getElementById("searchBtn");
-//     searchResults = document.getElementById("searchResults");
-//     url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=dog";
-//     ul = document.getElementById("searchResults");
-//     testString = "";
-
-//     addEventHandlers();
-//   }
-
-//   const addEventHandlers = function() {
-//     // searchBtn.addEventListener("click", setTimeout(() => {
-//     //   getData();
-//     // }, 300), false);
-//     searchBtn.addEventListener("click", getData, false);
-//     // searchBtn.addEventListener("click", testFunc, false);
-//   }
-
-//   const testFunc = function() {
-//     setTimeout(() => {
-//       getData();
-//     }, 1000);
-//   }
-
-//   const getData = function() {
-//     fetch(url)
-//       .then((resp) => resp.json())
-//       .then(function(data) {
-//         let searchResults = data.query.search;
-//         return searchResults.map(function(result) {
-//           let
-//             li = createNode("li"),
-//             h1 = createNode("h1"),
-//             p = createNode("p");
-//           h1.innerHTML = result.title;
-//           p.innerHTML = result.snippet;
-//           append(li, h1);
-//           append(li, p);
-//           append(ul, li);
-//         })
-//       })
-//       .catch(function(error) {
-//         console.log(error);
-//       })
-//   }
-
-//   const createNode = function(element) {
-//     return document.createElement(element);
-//   }
-
-//   const append = function(parent, element) {
-//     return parent.appendChild(element);
-//   }
-
-//   return {
-//     init: init
-//   }
-// }();
-
-// WikiViewer.init();
