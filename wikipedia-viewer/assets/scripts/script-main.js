@@ -30,13 +30,13 @@ const WikiViewer = function() {
       .then((data) => {
         let output = "";
         let pages = data.query.pages;
-        for (let key in pages) {
-          if (pages.hasOwnProperty(key)) {
-            let val = pages[key];
+        for (let page in pages) {
+          if (pages.hasOwnProperty(page)) {
+            let result = pages[page];
             output += `
               <div class="result">
-                <h2>${val.title}</h2>
-                <p>${val.extract}</p>
+                <h2>${result.title}</h2>
+                <p>${result.extract}</p>
               </div>
               `;
           }

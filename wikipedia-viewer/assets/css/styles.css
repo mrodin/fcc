@@ -11,6 +11,7 @@
 body {
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
+  background: #343d46;
 }
 
 h1 {
@@ -28,13 +29,11 @@ h2 {
 
 .container {
   position: absolute;
-  height: 100%;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  background: #343d46;
   }
 
 .fcc-logo {
@@ -108,6 +107,7 @@ h2 {
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
+  max-width: 960px;
 }
 
 .result:hover {
