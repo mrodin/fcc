@@ -34,10 +34,12 @@ const WikiViewer = function() {
           if (pages.hasOwnProperty(page)) {
             let result = pages[page];
             output += `
-              <div class="result">
-                <h2>${result.title}</h2>
-                <p>${result.extract}</p>
-              </div>
+              <a href="https://en.wikipedia.org/?curid=${result.pageid}" rel="nofollow" target="_blank">
+                <div class="result">
+                  <h2>${result.title}</h2>
+                  <p>${result.extract}</p>
+                </div>
+              </a>
               `;
           }
           document.getElementById("output").innerHTML = output;

@@ -23,6 +23,10 @@ h2 {
   font-size: 18px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /**
 * PAGE STYLES
 */
@@ -101,6 +105,11 @@ h2 {
   margin-top: 20px;
 }
 
+#output > a:last-child {
+  margin-bottom: 50px;
+  display: block;
+}
+
 .result {
   background: #ffffff;
   color: #2b303b;
@@ -113,4 +122,5 @@ h2 {
 .result:hover {
   border-left: 5px solid #E94E77;
   margin-left: -5px;
+  max-width: 965px;
 }
