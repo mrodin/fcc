@@ -16,8 +16,6 @@ const WikiViewer = function() {
         let searchQuery = search.value;
         if (searchQuery != "") {
           getData(searchQuery);
-        } else {
-          console.log("empty search field"); // TODO: log this on screen
         }
       }
     }
@@ -35,7 +33,7 @@ const WikiViewer = function() {
             let result = pages[page];
             output += `
               <a href="https://en.wikipedia.org/?curid=${result.pageid}" rel="nofollow" target="_blank">
-                <div class="result">
+                <div class="result slide-up-fade-in">
                   <h2>${result.title}</h2>
                   <p>${result.extract}</p>
                 </div>
