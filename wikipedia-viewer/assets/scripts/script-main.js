@@ -4,7 +4,7 @@ const WikiViewer = function() {
     search;
 
   const init = function() {
-    url = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&prop=extracts&exintro&explaintext&exsentences=1&gsrsearch=";
+    url = "https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&generator=search&prop=extracts&exintro&explaintext&exsentences=1&gsrsearch=";
     search = document.getElementById("search");
 
     addEventHandlers();
