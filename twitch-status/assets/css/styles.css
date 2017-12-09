@@ -8,3 +8,46 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #92BDE7;
+  color: #485E74;
+  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  max-width: 460px;
+  background: #fff;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/**
+* CONTROLS
+*/
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.controls > li {
+  padding: 1em;
+}
+
+/**
+* CHANNELS
+*/
+
+.channels > li {
+  display: grid;
+  grid-template-columns: 2fr 8fr 1fr;
+  padding: 1em;
+}
