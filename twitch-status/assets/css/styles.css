@@ -48,6 +48,18 @@ ul {
 
 .channels > li {
   display: grid;
-  grid-template-columns: 2fr 8fr 1fr;
+  grid-template-columns: 60px auto 60px;
   padding: 1em;
+}
+
+.channels > li > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo > img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
