@@ -40,6 +40,9 @@ ul {
 
 .controls > li {
   padding: 1em;
+}
+
+.activeButton {
   background-color: #4E337B;
   color: #FFF;
 }
@@ -65,4 +68,12 @@ ul {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+
+#online {
+  display: none;
+}
+
+#offline {
+  display: none;
 }
