@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #92BDE7;
+  background: #EDEAF1;
   color: #485E74;
   line-height: 1.6;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,8 +22,8 @@ ul {
 }
 
 .container {
-  max-width: 460px;
-  background: #fff;
+  max-width: 360px;
+  background: #FFF;
   margin-right: auto;
   margin-left: auto;
 }
@@ -40,6 +40,8 @@ ul {
 
 .controls > li {
   padding: 1em;
+  background-color: #4E337B;
+  color: #FFF;
 }
 
 /**
@@ -49,7 +51,8 @@ ul {
 .channels > li {
   display: grid;
   grid-template-columns: 60px auto 60px;
-  padding: 1em;
+  grid-template-rows: 60px;
+  padding: 0.25em 1em 0.25em 1em;
 }
 
 .channels > li > div {
