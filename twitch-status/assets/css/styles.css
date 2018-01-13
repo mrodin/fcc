@@ -21,6 +21,18 @@ ul {
   padding: 0;
 }
 
+.fa {
+  font-size: 1.3em !important;
+}
+
+.purple {
+  color: #4E337B;
+}
+
+.lightgrey {
+  color: #e3e3e4;
+}
+
 .container {
   max-width: 360px;
   background: #FFF;
@@ -40,6 +52,7 @@ ul {
 
 .controls > li {
   padding: 1em;
+  cursor: pointer;
 }
 
 .activeButton {
@@ -53,7 +66,7 @@ ul {
 
 .channels > li {
   display: grid;
-  grid-template-columns: 60px auto 60px;
+  grid-template-columns: 60px auto 30px;
   grid-template-rows: 60px;
   padding: 0.25em 1em 0.25em 1em;
 }
