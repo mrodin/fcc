@@ -8,18 +8,17 @@
   <title>Twitch Status</title>
   <link href="assets/css/styles.css" rel="stylesheet" type="text/css" />
   <script src="https://use.fontawesome.com/4fc8455e92.js"></script>
-  <script src="assets/scripts/script-main.js"></script>
 </head>
 
 <body>
   <div class="container">
     <ul class="controls">
-      <li class="tab activeButton" onclick="openTab(event, 'all')">All</li>
-      <li class="tab" onclick="openTab(event, 'online')">Online</li>
-      <li class="tab" onclick="openTab(event, 'offline')">Offline</li>
+      <li class="tab active-button" id="all-button">All</li>
+      <li class="tab" id="online-button">Online</li>
+      <li class="tab" id="offline-button">Offline</li>
     </ul>
 
-    <ul class="channels" id="all">
+    <ul class="channels" id="all-channels">
       <li>
         <div class="logo"><img src="assets/img/cohhcarnage.png" alt="CohhCarnage"></div>
         <div class="name">CohhCarnage</div>
@@ -72,7 +71,7 @@
       </li>
     </ul>
 
-    <ul class="channels" id="online">
+    <ul class="channels" id="online-channels">
       <li>
         <div class="logo"><img src="assets/img/cohhcarnage.png" alt="CohhCarnage"></div>
         <div class="name">CohhCarnage</div>
@@ -100,7 +99,7 @@
       </li>
     </ul>
 
-    <ul class="channels" id="offline">
+    <ul class="channels" id="offline-channels">
       <li>
         <div class="logo"><img src="assets/img/cretetion.jpeg" alt="cretetion"></div>
         <div class="name">cretetion</div>
@@ -128,6 +127,7 @@
       </li>
     </ul>
   </div>
+  <script src="assets/scripts/script-main.js"></script>
 </body>
 
 </html>

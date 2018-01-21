@@ -30,7 +30,7 @@ ul {
 }
 
 .lightgrey {
-  color: #e3e3e4;
+  color: #E3E3E4;
 }
 
 .container {
@@ -55,7 +55,7 @@ ul {
   cursor: pointer;
 }
 
-.activeButton {
+.active-button {
   background-color: #4E337B;
   color: #FFF;
 }
@@ -83,10 +83,10 @@ ul {
   border-radius: 50%;
 }
 
-#online {
+#online-channels {
   display: none;
 }
 
-#offline {
+#offline-channels {
   display: none;
 }
