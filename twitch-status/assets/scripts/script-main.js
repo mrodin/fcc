@@ -1,35 +1,52 @@
 const TwitchStatus = (function() {
 
+  const settings = {
+    allButton: document.getElementById("all-button"),
+    onlineButton: document.getElementById("online-button"),
+    offlineButton: document.getElementById("offline-button"),
+  };
+
   const init = function() {
     bindUI();
   };
 
   const bindUI = function() {
-    document.getElementById("all-button").addEventListener("click", function() { openTab("all-button", "all-channels"); });
-    document.getElementById("online-button").addEventListener("click", function() { openTab("online-button", "online-channels"); });
-    document.getElementById("offline-button").addEventListener("click", function() { openTab("offline-button", "offline-channels"); });
-  }
+    settings.allButton.addEventListener("click", function() { openTab("all-button", "all-channels"); });
+    settings.onlineButton.addEventListener("click", function() { openTab("online-button", "online-channels"); });
+    settings.offlineButton.addEventListener("click", function() { openTab("offline-button", "offline-channels"); });
+  };
 
   const openTab = function(buttonType, channelType) {
+    removeActiveButton();
+    hideChannels();
+    addActiveButton(buttonType);
+    showChannels(channelType);
+  };
 
-    // Declare all variables
-    var i, channels, tabs;
+  // Add an "active-button" class to the button that opened the tab
+  const addActiveButton = function(buttonType) {
+    document.getElementById(buttonType).className += " active-button";
+  };
+  
+  // Get all elements with class="button" and remove the class "active"
+  const removeActiveButton = function() {
+    let buttons = document.getElementsByClassName("button");
+    for (i = 0; i < buttons.length; i++) {
+      buttons[i].className = buttons[i].className.replace(" active-button", "");
+    }
+  };
 
-    // Get all elements with class="channels" and hide them
-    channels = document.getElementsByClassName("channels");
+  // Show channels on current tab
+  const showChannels = function(channelType) {
+    document.getElementById(channelType).style.display = "grid";
+  };
+
+  // Get all elements with class="channels" and hide them
+  const hideChannels = function() {
+    let channels = document.getElementsByClassName("channels");
     for (i = 0; i < channels.length; i++) {
       channels[i].style.display = "none";
     }
-
-    // Get all elements with class="tabs" and remove the class "active"
-    tabs = document.getElementsByClassName("tab");
-    for (i = 0; i < tabs.length; i++) {
-      tabs[i].className = tabs[i].className.replace(" active-button", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(channelType).style.display = "grid";
-    document.getElementById(buttonType).className += " active-button";
   };
 
   return {
@@ -39,24 +56,3 @@ const TwitchStatus = (function() {
 })();
 
 TwitchStatus.init();
-
-// function openTab(event, channelType) {
-//   // Declare all variables
-//   var i, channels, tabs;
-
-//   // Get all elements with class="channels" and hide them
-//   channels = document.getElementsByClassName("channels");
-//   for (i = 0; i < channels.length; i++) {
-//     channels[i].style.display = "none";
-//   }
-
-//   // Get all elements with class="tabs" and remove the class "active"
-//   tabs = document.getElementsByClassName("tab");
-//   for (i = 0; i < tabs.length; i++) {
-//       tabs[i].className = tabs[i].className.replace(" activeButton", "");
-//   }
-
-//   // Show the current tab, and add an "active" class to the button that opened the tab
-//   document.getElementById(channelType).style.display = "grid";
-//   event.currentTarget.className += " activeButton";
-// }
