@@ -1,6 +1,8 @@
 const TwitchStatus = (function() {
 
   const settings = {
+    baseURL: "https://wind-bow.gomix.me/twitch-api/streams/",
+    channels: "ESL_SC2",
     allButton: document.getElementById("all-button"),
     onlineButton: document.getElementById("online-button"),
     offlineButton: document.getElementById("offline-button"),
@@ -8,6 +10,7 @@ const TwitchStatus = (function() {
 
   const init = function() {
     bindUI();
+    getJSON();
   };
 
   const bindUI = function() {
@@ -27,7 +30,7 @@ const TwitchStatus = (function() {
   const addActiveButton = function(buttonType) {
     document.getElementById(buttonType).className += " active-button";
   };
-  
+
   // Get all elements with class="button" and remove the class "active"
   const removeActiveButton = function() {
     let buttons = document.getElementsByClassName("button");
@@ -47,6 +50,13 @@ const TwitchStatus = (function() {
     for (i = 0; i < channels.length; i++) {
       channels[i].style.display = "none";
     }
+  };
+
+  const getJSON = function() {
+    const queryURL = settings.baseURL + settings.channels;
+    fetch(queryURL)
+      .then((resp) => resp.json())
+      .then((data) => console.log(data));
   };
 
   return {
