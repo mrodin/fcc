@@ -56,7 +56,12 @@ const TwitchStatus = (function() {
     const queryURL = settings.baseURL + settings.channels;
     fetch(queryURL)
       .then((resp) => resp.json())
-      .then((data) => console.log(data));
+      .then((data) => buildHTML(data));
+  };
+
+  const buildHTML = function(data) {
+    let output = "test";
+    document.getElementById("test-channels").innerHTML = output;
   };
 
   return {
