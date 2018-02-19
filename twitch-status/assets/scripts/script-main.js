@@ -56,7 +56,7 @@ const getJSON = () => {
 };
 
 const buildHTML = (data) => {
-  let output = "test";
+  let output = "test2";
   document.getElementById("test-channels").innerHTML = output;
 };
 
