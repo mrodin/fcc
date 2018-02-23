@@ -1,5 +1,5 @@
-const CHANNELS_BASE_URL = "https://wind-bow.gomix.me/twitch-api/channels/";
-const STREAMS_BASE_URL = "https://wind-bow.gomix.me/twitch-api/streams/";
+const CHANNELS_BASE_URL = "https://wind-bow.glitch.me/twitch-api/channels/";
+const STREAMS_BASE_URL = "https://wind-bow.glitch.me/twitch-api/streams/";
 const CHANNEL_LIST = ["cohhcarnage", "cretetion", "dansgaming", "esl_sc2",
   "freecodecamp", "habathcx", "noobs2ninjas", "ogamingsc2",
   "robotcaleb", "storbeck"];
