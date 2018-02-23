@@ -14,9 +14,9 @@ const init = () => {
 };
 
 const bindUI = () => {
-  ALL_BUTTON.addEventListener("click", function () { openTab("all-button", "all-channels"); });
-  ONLINE_BUTTON.addEventListener("click", function () { openTab("online-button", "online-channels"); });
-  OFFLINE_BUTTON.addEventListener("click", function () { openTab("offline-button", "offline-channels"); });
+  ALL_BUTTON.addEventListener("click", function () { openTab("all-button", ["online-channels", "offline-channels"]); });
+  ONLINE_BUTTON.addEventListener("click", function () { openTab("online-button", ["online-channels"]); });
+  OFFLINE_BUTTON.addEventListener("click", function () { openTab("offline-button", ["offline-channels"]); });
 };
 
 // Gets called when user clicks on any tab control
@@ -42,7 +42,9 @@ const removeActiveButton = () => {
 
 // Show channels on current tab
 const showChannels = (channelType) => {
-  document.getElementById(channelType).style.display = "grid";
+  channelType.forEach((ctype) => {
+    document.getElementById(ctype).style.display = "grid";
+  });
 };
 
 // Get all elements with class="channels" and hide them
@@ -99,7 +101,7 @@ const buildOnlineChannelHtml = (data) => {
         <div class="status"><i class="fa fa-bolt purple" aria-hidden="true"></i></div>
     </li>
   `;
-  document.getElementById("test-channels").innerHTML += html;
+  document.getElementById("online-channels").innerHTML += html;
 };
 
 const buildOfflineChannelHtml = (data) => {
@@ -115,7 +117,7 @@ const buildOfflineChannelHtml = (data) => {
         <div class="status"><i class="fa fa-bolt lightgrey" aria-hidden="true"></i></div>
     </li>
   `;
-  document.getElementById("test-channels").innerHTML += html;
+  document.getElementById("offline-channels").innerHTML += html;
 };
 
 init();

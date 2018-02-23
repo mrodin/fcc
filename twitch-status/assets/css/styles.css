@@ -102,11 +102,3 @@ ul {
   align-self: flex-start;
   font-size: 0.6em;
 }
-
-#online-channels {
-  display: none;
-}
-
-#offline-channels {
-  display: none;
-}
