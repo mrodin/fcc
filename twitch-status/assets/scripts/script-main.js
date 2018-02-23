@@ -7,10 +7,6 @@ const ALL_BUTTON = document.getElementById("all-button");
 const ONLINE_BUTTON = document.getElementById("online-button");
 const OFFLINE_BUTTON = document.getElementById("offline-button");
 
-// Html code populated with data from Twitch API
-let onlineChannelsHtml = "";
-let offlineChannelsHtml = "";
-
 // Entry point
 const init = () => {
   bindUI();
