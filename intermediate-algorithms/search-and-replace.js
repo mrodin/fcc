@@ -5,17 +5,14 @@ function myReplace(str, before, after) {
   let beforeIndex = strArr.indexOf(before);
   let isCapital = strArr[beforeIndex] !== strArr[beforeIndex].toLowerCase();
 
-  strArr.splice(4, 1, 'May');
+  if (isCapital) {
+    let capitalizedAfter = after.charAt(0).toUpperCase() + after.slice(1);
+    strArr.splice(beforeIndex, 1, capitalizedAfter);
+  } else {
+    strArr.splice(beforeIndex, 1, after);
+  }
 
-  // if (isCapital) {
-  //   result = strArr.splice(beforeIndex, 1, after.toUpperCase()).join(" ");
-  // } else {
-  //   result = strArr.splice(beforeIndex, 1, after).join(" ");
-  // }
-
-  console.log(strArr);
-
-  return strArr;
+  return strArr.join(" ");
 }
 
-myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
