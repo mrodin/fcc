@@ -5,7 +5,6 @@ function convertHTML(str) {
 
   let result = str.replace(/[&<>"']/g, c => CHAR_MAP[c]);
 
-  console.log(result);
   return result;
 }
 
