@@ -135,6 +135,38 @@ main {
   margin-bottom: 2em;
 }
 
+/* CONTACTS AND SOCIAL */
+
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.social-list > li {
+  flex-basis: 25%;
+  padding: 10px 0 10px 0;
+}
+
+.social-link {
+  transition: color 0.3s ease;
+  color: #494C4E;
+}
+
+.social-link:hover {
+  color: #ff5417;
+}
+
+.fa {
+  font-size: 18px;
+}
+
+.social-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-left: 7px;
+}
+
 /* MEDIA QUERIES */
 
 @media(max-width: 420px) {
