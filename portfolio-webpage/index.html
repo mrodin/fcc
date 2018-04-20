@@ -13,17 +13,17 @@
 
 <body>
   <!-- Navigation -->
-  <nav>
+  <nav id="home">
     <ul class="menu list-inline">
-      <li>Home</li>
-      <li>Portfolio</li>
-      <li>Contact</li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Header -->
   <header>
-    <div class="header-wrapper">
+    <div class="wrapper">
       <div class="name-card">
         <div class="showcase-photo">
           <img src="assets/img/showcase-photo.png" alt="Showcase photo">
@@ -36,17 +36,17 @@
       <hr>
       <p>
         Hey, my name is Martin and I'm teaching myself how to code. Right now, I'm making my way through
-        <a href="https://www.freecodecamp.com/">freeCodeCamp</a> project using primarily HTML, CSS and JavaScript. But I'm also familiar with C# and associated Microsoft
+        <a href="https://www.freecodecamp.com/mrodin">freeCodeCamp</a> project using primarily HTML, CSS and JavaScript. But I'm also familiar with C# and associated Microsoft
         technologies.
       </p>
-      <p>Here you can check some of the projects I've been working on or get in touch with me.</p>
+      <p>Here you can check some of the <a href="#portfolio">projects</a> I've been working on or <a href="#contact">get in touch with me.</a></p>
     </div>
   </header>
 
   <main>
     <!-- Portfolio -->
     <div class="wrapper">
-      <section>
+      <section id="portfolio">
         <h2>
           freeCodeCamp
           <i class="fa fa-free-code-camp" aria-hidden="true"></i>
@@ -87,41 +87,41 @@
       </section>
 
       <!-- Contacts & Social -->
-      <section>
+      <section id="contact">
         <h2>Contacts and Social</h2>
         <hr>
         <ul class="social-list list-inline">
           <li>
             <a href="mailto:rodin.martin@gmail.com" target="_blank" title="Send me an email" class="social-link">
-              <i class="fa fa-envelope" aria-hidden="true">
+              <i class="fa fa-envelope social-fa" aria-hidden="true">
                 <span class="social-name">Email</span>
               </i>
             </a>
           </li>
           <li>
             <a href="https://github.com/mrodin/" target="_blank" title="See my GitHub profile" class="social-link">
-              <i class="fa fa-github" aria-hidden="true">
+              <i class="fa fa-github social-fa" aria-hidden="true">
                 <span class="social-name">Github</span>
               </i>
             </a>
           </li>
           <li>
             <a href="https://linkedin.com" target="_blank" title="See my LinkedIn profile" class="social-link">
-              <i class="fa fa-linkedin" aria-hidden="true">
+              <i class="fa fa-linkedin social-fa" aria-hidden="true">
                 <span class="social-name">LinkedIn</span>
               </i>
             </a>
           </li>
           <li>
             <a href="https://codepen.io/martinrodin/" target="_blank" title="See my CodePen profile" class="social-link">
-              <i class="fa fa-codepen" aria-hidden="true">
+              <i class="fa fa-codepen social-fa" aria-hidden="true">
                 <span class="social-name">Codepen</span>
               </i>
             </a>
           </li>
           <li>
             <a href="https://www.freecodecamp.com/mrodin/" target="_blank" title="See my freeCodeCamp profile" class="social-link">
-              <i class="fa fa-free-code-camp" aria-hidden="true">
+              <i class="fa fa-free-code-camp social-fa" aria-hidden="true">
                 <span class="social-name">freeCodeCamp</span>
               </i>
             </a>
@@ -133,7 +133,13 @@
 
   <!-- Footer -->
   <footer>
-
+    <div class="wrapper">
+      <h2>Martin Rodin</h2>
+      <p>
+        I'm a web developer based in Prague, Czechia primarily working with JavaScript and .NET framework. I'm now making my way
+        through freeCodeCamp and enjoying the experience.
+      </p>
+    </div>
   </footer>
 </body>
 
